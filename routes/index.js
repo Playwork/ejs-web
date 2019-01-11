@@ -55,5 +55,42 @@ router.post('/login', urlencodedParser, function(req, res, next) {
 
 });
 
+router.get('/detail', function(req, res) {
+  var follower = [
+    '0 - 1000',
+    '1001 - 10000',
+    '10001 - 100000'
+  ];
+  var price = [
+    '0 - 1000',
+    '1001 - 3000',
+    '3001 - 5000'
+  ];
+  var location = [
+    'Kanchanaburi',
+    'ChiangMai',
+    'SamutPrakan',
+    'Bangkok'
+  ];
+  var jobType = [
+    'Reviewer',
+    'Blogger',
+    'Youtuber',
+    'Streamer',
+    'Bomber'
+  ];
+  var social = [
+   'Facebook',
+   'Instagram',
+   'Youtube',
+   'Pantip'
+  ];
+  var gender = [
+    'Male',
+    'Female'
+  ];
+  res.render('detail', { follower, price, location, jobType, social, gender });
+});
+
 
 module.exports = router;
