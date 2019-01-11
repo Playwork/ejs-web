@@ -6,28 +6,31 @@
     <div class="container" id="app">
         {{ selectLocation }}
 
-
-
         <div class="row">
             <div class="col-sm">
-                <select class="form-control" v-model="selectLocation">
-                    <%  locationList.forEach(function(item){ %>
+                <label>Follower</label>
+                <select class="form-control" v-model="selectFollow">
+                    <%  followList.forEach(function(item){ %>
                     <option>
                         <%=  item  %>
                     </option>
                     <% }) %>
                 </select>
             </div>
+
             <div class="col-sm">
-                <select class="form-control" v-model="selectLocation">
-                    <%  locationList.forEach(function(item){ %>
+                <label>Price</label>
+                <select class="form-control" v-model="selectPrice">
+                    <%  priceList.forEach(function(item){ %>
                     <option>
                         <%=  item  %>
                     </option>
                     <% }) %>
                 </select>
             </div>
+
             <div class="col-sm">
+                <label>Location</label>
                 <select class="form-control" v-model="selectLocation">
                     <%  locationList.forEach(function(item){ %>
                     <option>
@@ -41,26 +44,32 @@
 
         <div class="row">
                 <div class="col-sm">
-                    <select class="form-control" v-model="selectLocation">
-                        <%  locationList.forEach(function(item){ %>
+                    <label>Job Type</label>
+                    <select class="form-control" v-model="selectJobType">
+                        <%  jobType.forEach(function(item){ %>
                         <option>
                             <%=  item  %>
                         </option>
                         <% }) %>
                     </select>
                 </div>
+
                 <div class="col-sm">
-                    <select class="form-control" v-model="selectLocation">
-                        <%  locationList.forEach(function(item){ %>
+                    <label>Social</label>
+                    <select class="form-control" v-model="selectSocial">
+                        <%  social.forEach(function(item){ %>
                         <option>
                             <%=  item  %>
                         </option>
                         <% }) %>
                     </select>
                 </div>
+
+              
                 <div class="col-sm">
-                    <select class="form-control" v-model="selectLocation">
-                        <%  locationList.forEach(function(item){ %>
+                    <label>Gender</label>
+                    <select class="form-control" v-model="selectGender">
+                        <%  gender.forEach(function(item){ %>
                         <option>
                             <%=  item  %>
                         </option>
@@ -68,9 +77,6 @@
                     </select>
                 </div>
             </div>
-
-
-
 
         <button v-on:click="clickBtn">Search</button>
 
@@ -90,7 +96,12 @@
             data: {
                 message: 'Hello Vue!',
                 items: locationList,
-                selectLocation: ""
+                selectFollow: "",
+                selectPrice: "",
+                selectLocation: "",
+                selectJobType: "",
+                selectSocial: "",
+                selectGender: ""
             },
             methods: {
                 clickBtn: function () {
@@ -98,7 +109,6 @@
                 }
             }
         });
-
     })();
 
 

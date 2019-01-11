@@ -41,9 +41,43 @@ router.get('/home', function(req, res, next) {
   const followList = ["",
                      100,200,500,1000,2000 
                      ]
-  const priceList  = ["2,500.00" , 5000]
+  const priceList  = ["",
+                      "2,500.00", 
+                      5000
+                     ]
+  const jobType = [ "",
+                  'Reviewer',
+                  'Blogger',
+                  'Youtuber',
+                  'Streamer',
+                  'Bomber'
+                ];
+  const social = [ "",
+                'Facebook',
+                'Instagram',
+                'Youtube',
+                'Pantip'
+                ];
+  const gender = [ "",
+                  'Male',
+                  'Female'
+                ];
+  const category = [ "",
+                    'Facebook',
+                    'Instagram',
+                    'Youtube',
+                    'Pantip'
+                  ];
           
-  res.render('home', { followList: followList , locationList:locationList, priceList  });
+  res.render('home', { 
+    followList, 
+    locationList:locationList, 
+    priceList,
+    jobType, 
+    social, 
+    gender,
+    category
+  });
 });
 
 router.post('/getData', function(req, res, next) {
@@ -65,49 +99,5 @@ router.post('/login', urlencodedParser, function(req, res, next) {
     }).catch(err => console.log(err));
 
 });
-
-router.get('/detail', function(req, res) {
-  var follower = [
-    '0 - 1000',
-    '1001 - 10000',
-    '10001 - 100000'
-  ];
-  var price = [
-    '0 - 1000',
-    '1001 - 3000',
-    '3001 - 5000'
-  ];
-  var location = [
-    'Kanchanaburi',
-    'ChiangMai',
-    'SamutPrakan',
-    'Bangkok'
-  ];
-  var jobType = [
-    'Reviewer',
-    'Blogger',
-    'Youtuber',
-    'Streamer',
-    'Bomber'
-  ];
-  var social = [
-   'Facebook',
-   'Instagram',
-   'Youtube',
-   'Pantip'
-  ];
-  var gender = [
-    'Male',
-    'Female'
-  ];
-  var category = [
-    'Facebook',
-    'Instagram',
-    'Youtube',
-    'Pantip'
-   ];
-  res.render('detail', { follower, price, location, jobType, social, gender });
-});
-
 
 module.exports = router;
