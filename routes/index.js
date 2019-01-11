@@ -31,8 +31,19 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', username: "...." });
 });
 
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
+router.get('/home', function(req, res, next) {
+
+  const locationList = [ "",
+                      "bangkok" , 
+                      "samutparkarn" ,
+                      "buriram"
+                      ] 
+  const followList = ["",
+                     100,200,500,1000,2000 
+                     ]
+  const priceList  = ["2,500.00" , 5000]
+          
+  res.render('home', { followList: followList , locationList:locationList, priceList  });
 });
 
 router.post('/getData', function(req, res, next) {
