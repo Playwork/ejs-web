@@ -89,6 +89,12 @@ router.get('/detail', function(req, res) {
     'Male',
     'Female'
   ];
+  var category = [
+    'Facebook',
+    'Instagram',
+    'Youtube',
+    'Pantip'
+   ];
   res.render('detail', { follower, price, location, jobType, social, gender });
 });
 
