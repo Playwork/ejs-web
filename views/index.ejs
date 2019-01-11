@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
+<% include template/header %>
 
 <body>
 <h1>Hello EJS</h1>
+
+</body>
+
 <form action="/login" method="POST">
   Username:<br>
   <input type="text" name="username" value="">
