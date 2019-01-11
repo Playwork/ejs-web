@@ -4,9 +4,9 @@
 
 <body>
     <div class="container" id="app">
-        {{ selectLocation }}
 
 
+           <!---  search result seactions -->
 
         <div class="row">
             <div class="col-sm">
@@ -69,10 +69,31 @@
                 </div>
             </div>
 
+            <br/>
+
+            <div class="row justify-content-md-center">
+                <button class="btn btn-primary"  v-on:click="clickBtn">Search</button>
+            </div>
+
+            <!---  search result seactions -->
+           <br/>
+            <div class="row justify-content-md-center">
+
+                <div v-for="result in searchResult"   class="card  m-10" style="width: 18rem;">
+                    <img class="card-img-top" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1683c9c4e1b%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1683c9c4e1b%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.6%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                            content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            
+            
+        </div>
 
 
-
-        <button v-on:click="clickBtn">Search</button>
 
 </body>
 
@@ -83,26 +104,26 @@
 
         var location = '<%= locationList %>';
         var locationList = location.split(',');
-        console.log(location);
+    
 
         var app = new Vue({
             el: '#app',
             data: {
                 message: 'Hello Vue!',
                 items: locationList,
-                selectLocation: ""
+                selectLocation: "",
+                searchResult: [ {} ,{} ,{} ]
             },
             methods: {
                 clickBtn: function () {
-                    console.log(this.selectValue);
+                    // TODO   show filtter value  result//
+                    console.log("show result"); 
+                    
                 }
             }
         });
 
     })();
-
-
-
 
 </script>
 
