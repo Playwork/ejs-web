@@ -41,9 +41,43 @@ router.get('/home', function(req, res, next) {
   const followList = ["",
                      100,200,500,1000,2000 
                      ]
-  const priceList  = ["2,500.00" , 5000]
+  const priceList  = ["",
+                      "2,500.00", 
+                      5000
+                     ]
+  const jobType = [ "",
+                  'Reviewer',
+                  'Blogger',
+                  'Youtuber',
+                  'Streamer',
+                  'Bomber'
+                ];
+  const social = [ "",
+                'Facebook',
+                'Instagram',
+                'Youtube',
+                'Pantip'
+                ];
+  const gender = [ "",
+                  'Male',
+                  'Female'
+                ];
+  const category = [ "",
+                    'Facebook',
+                    'Instagram',
+                    'Youtube',
+                    'Pantip'
+                  ];
           
-  res.render('home', { followList: followList , locationList:locationList, priceList  });
+  res.render('home', { 
+    followList, 
+    locationList:locationList, 
+    priceList,
+    jobType, 
+    social, 
+    gender,
+    category
+  });
 });
 
 router.post('/getData', function(req, res, next) {
@@ -65,6 +99,5 @@ router.post('/login', urlencodedParser, function(req, res, next) {
     }).catch(err => console.log(err));
 
 });
-
 
 module.exports = router;
